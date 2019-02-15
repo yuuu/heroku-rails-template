@@ -82,6 +82,10 @@ h2 {
   @extend .white-text;
 }
 
+#diary_encrypted_body {
+  height: 20ex;
+}
+
 footer {
   width: 100%;
   background-color: $primary-color;

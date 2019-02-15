@@ -13,8 +13,14 @@
     <div class="section no-pad-bot no-pad-top" id="main">
       <nav role="navigation">
         <div class="nav-wrapper container">
-          <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+          <a href="<%= root_path %>" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
           <ul class="right hide-on-med-and-down">
+            <% if current_user %>
+            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li><%= link_to 'Sign in', new_user_session_path %></li>
+            <% end %>
             <li><a href="sass.html"><i class="material-icons white-text">search</i></a></li>
             <li><a href="badges.html"><i class="material-icons white-text">view_module</i></a></li>
             <li><a href="collapsible.html"><i class="material-icons white-text">refresh</i></a></li>

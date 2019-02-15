@@ -1,0 +1,12 @@
+  <%= month_calendar do |date| %>
+    <%= "#{date.month}/#{date.day}" %>
+    <% if diary = @diaries.detect{ |d| d.date == date } %>
+    <a href="<%= diary_path(diary) %>">
+      <i class="material-icons">note</i>
+    </a>
+    <% else %>
+    <a href="<%= new_diary_path(date: date) %>">
+      <i class="material-icons">add</i>
+    </a>
+    <% end %>
+  <% end %>

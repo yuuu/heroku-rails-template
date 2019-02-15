@@ -1,10 +1,11 @@
 class DiariesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_diary, only: [:show, :edit, :update, :destroy]
 
   # GET /diaries
   # GET /diaries.json
   def index
-    @diaries = Diary.all
+    @diaries = current_user.diaries
   end
 
   # GET /diaries/1
@@ -14,7 +15,7 @@ class DiariesController < ApplicationController
 
   # GET /diaries/new
   def new
-    @diary = Diary.new
+    @diary = current_user.diaries.build(date: params[:date])
   end
 
   # GET /diaries/1/edit
@@ -24,8 +25,7 @@ class DiariesController < ApplicationController
   # POST /diaries
   # POST /diaries.json
   def create
-    @diary = Diary.new(diary_params)
-
+    @diary = current_user.diaries.build(diary_params)
     if @diary.save
       redirect_to @diary, notice: 'Diary was successfully created.'
     else
@@ -53,7 +53,7 @@ class DiariesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_diary
-      @diary = Diary.find(params[:id])
+      @diary = current_user.diaries.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

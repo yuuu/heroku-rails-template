@@ -15,13 +15,6 @@
 
   <div class="field row">
     <div class="col l12">
-      <%= form.label :encrypted_body %>
-      <%= form.text_area :encrypted_body, class: 'materialize-textarea', rows: 10 %>
-    </div>
-  </div>
-
-  <div class="field row">
-    <div class="col l12">
       <%= form.label :date %>
       <%= form.text_field :date, class: :datepicker %>
     </div>
@@ -29,8 +22,8 @@
 
   <div class="field row">
     <div class="col l12">
-      <%= form.label :user_id %>
-      <%= form.select :user_id, User.pluck(:email, :id) %>
+      <%= form.label :encrypted_body %>
+      <%= form.text_area :encrypted_body, class: 'materialize-textarea', rows: 10 %>
     </div>
   </div>
 

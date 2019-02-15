@@ -1,7 +1,12 @@
 <h1>Diaries</h1>
 
 <div class="row">
-  <div class="col l7 s12">
+  <div class="col l12">
+    <%= link_to 'New Diary', new_diary_path, class: 'action-btn' %>
+  </div>
+</div>
+<div class="row">
+  <div class="col l8 s12">
     <table>
       <thead>
         <tr>
@@ -28,18 +33,7 @@
       </tbody>
     </table>
   </div>
-  <div class="col l5 s12">
-    <%= month_calendar do |date| %>
-      <%= "#{date.month}/#{date.day}" %>
-      <a href="<%= new_diary_path %>">
-        <i class="material-icons">note</i>
-      </a>
-    <% end %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col l12">
-    <%= link_to 'New Diary', new_diary_path, class: 'action-btn' %>
+  <div class="col l4 s12">
+    <%= render 'calendar' %>
   </div>
 </div>
