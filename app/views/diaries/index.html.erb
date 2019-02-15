@@ -1,0 +1,45 @@
+<h1>Diaries</h1>
+
+<div class="row">
+  <div class="col l7 s12">
+    <table>
+      <thead>
+        <tr>
+          <th>Encrypted body</th>
+          <th>Date</th>
+          <th>User</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @diaries.each do |diary| %>
+          <tr>
+            <td><%= diary.encrypted_body %></td>
+            <td><%= diary.date %></td>
+            <td><%= diary.user_id %></td>
+            <td>
+              <%= link_to 'Show', diary, class: 'show-btn'  %>
+              <%= link_to 'Edit', edit_diary_path(diary), class: 'edit-btn' %>
+              <%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-btn' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col l5 s12">
+    <%= month_calendar do |date| %>
+      <%= "#{date.month}/#{date.day}" %>
+      <a href="<%= new_diary_path %>">
+        <i class="material-icons">note</i>
+      </a>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col l12">
+    <%= link_to 'New Diary', new_diary_path, class: 'action-btn' %>
+  </div>
+</div>

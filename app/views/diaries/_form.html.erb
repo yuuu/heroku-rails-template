@@ -1,0 +1,42 @@
+<%= form_with(model: diary, local: true) do |form| %>
+  <% if diary.errors.any? %>
+    <div id="error_explanation" class="row">
+      <div class="col l12">
+        <h2><%= pluralize(diary.errors.count, "error") %> prohibited this diary from being saved:</h2>
+
+        <ul>
+        <% diary.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="field row">
+    <div class="col l12">
+      <%= form.label :encrypted_body %>
+      <%= form.text_area :encrypted_body, class: 'materialize-textarea', rows: 10 %>
+    </div>
+  </div>
+
+  <div class="field row">
+    <div class="col l12">
+      <%= form.label :date %>
+      <%= form.text_field :date, class: :datepicker %>
+    </div>
+  </div>
+
+  <div class="field row">
+    <div class="col l12">
+      <%= form.label :user_id %>
+      <%= form.select :user_id, User.pluck(:email, :id) %>
+    </div>
+  </div>
+
+  <div class="actions row">
+    <div class="col l12">
+      <%= form.submit class: 'action-btn' %>
+    </div>
+  </div>
+<% end %>

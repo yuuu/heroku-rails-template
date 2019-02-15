@@ -1,0 +1,89 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require simple_calendar
+ *= require material_icons
+ *= require_tree .
+ *= require_self
+ */
+@import "materialize/components/color-variables";
+$primary-color: color("amber", "lighten-1") !default;
+$secondary-color: color("light-blue", "darken-4") !default;
+@import "materialize";
+
+nav {
+  background-color: $primary-color;
+}
+
+body,
+#main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  color: $primary-color;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+}
+
+h2 {
+  color: $secondary-color;
+}
+
+.action-btn {
+  @extend .waves-effect;
+  @extend .waves-light;
+  @extend .btn;
+  @extend .white-text;
+}
+
+.back-btn {
+  @extend .waves-effect;
+  @extend .waves-light;
+  @extend .btn;
+  @extend .blue-grey;
+  @extend .lighten-2;
+  @extend .white-text;
+}
+
+.show-btn {
+  @extend .waves-effect;
+  @extend .waves-light;
+  @extend .btn;
+  @extend .amber;
+  @extend .lighten-1;
+  @extend .white-text;
+}
+
+.edit-btn {
+  @extend .waves-effect;
+  @extend .waves-light;
+  @extend .btn;
+  @extend .teal;
+  @extend .white-text;
+}
+
+.destroy-btn {
+  @extend .waves-effect;
+  @extend .waves-light;
+  @extend .btn;
+  @extend .red;
+  @extend .white-text;
+}
+
+footer {
+  width: 100%;
+  background-color: $primary-color;
+  margin-top: auto;
+}
