@@ -13,17 +13,7 @@
       </thead>
 
       <tbody>
-        <% @diaries.each do |diary| %>
-          <tr>
-            <td><%= diary.date %></td>
-            <td><%= simple_format diary.body %></td>
-            <td>
-              <%= link_to 'Show', diary, class: 'show-btn'  %>
-              <%= link_to 'Edit', edit_diary_path(diary), class: 'edit-btn' %>
-              <%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-btn' %>
-            </td>
-          </tr>
-        <% end %>
+        <%= render partial: 'diary', collection: @diaries %>
       </tbody>
     </table>
     <%= paginate @diaries %>
