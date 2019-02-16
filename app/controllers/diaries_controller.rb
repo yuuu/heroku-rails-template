@@ -1,9 +1,10 @@
 class DiariesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_diary, only: [:show, :edit, :update, :destroy]
-  before_action :set_diaries
+  before_action :set_calendar_diaries
 
   def index
+    @diaries = current_user.diaries.order(date: :desc).page(params[:page])
   end
 
   def show
@@ -39,8 +40,11 @@ class DiariesController < ApplicationController
   end
 
   private
-    def set_diaries
-      @diaries = current_user.diaries
+    def set_calendar_diaries
+      date = params[:start_date] ? Date.parse(params[:start_date]) : Date.today.beginning_of_month
+      @calendar_diaries = current_user.diaries
+                                      .where(date: (date - 1.week)..(date + 1.week))
+                                      .order(date: :desc)
     end
 
     def set_diary

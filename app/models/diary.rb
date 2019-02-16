@@ -1,5 +1,6 @@
 class Diary < ApplicationRecord
   attr_accessor :body
+  paginates_per 3
 
   validates :date, presence: true, uniqueness: true
   validates :body, presence: true
