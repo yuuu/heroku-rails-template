@@ -1,23 +1,33 @@
+<h1>New Diary</h1>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Encrypted body:</strong>
-  <%= @diary.encrypted_body %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @diary.date %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @diary.user_id %>
-</p>
-
 <div class="row">
-  <div class="col l12">
-    <%= link_to 'Edit', edit_diary_path(@diary), class: 'edit-btn' %>
-    <%= link_to 'Back', diaries_path, class: 'back-btn' %>
+  <div class="col l8 s12">
+    <p>
+      <strong>Body:</strong>
+      <%= @diary.body %>
+    </p>
+
+    <p>
+      <strong>Date:</strong>
+      <%= @diary.date %>
+    </p>
+
+    <p>
+      <strong>User:</strong>
+      <%= @diary.user_id %>
+    </p>
+
+    <div class="row">
+      <div class="col l12">
+        <%= link_to 'Edit', edit_diary_path(@diary), class: 'edit-btn' %>
+        <%= link_to 'Back', diaries_path, class: 'back-btn' %>
+      </div>
+    </div>
+  </div>
+  <div class="col l4 s12">
+    <%= render 'calendar' %>
   </div>
 </div>
+

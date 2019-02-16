@@ -1,6 +1,6 @@
   <%= month_calendar do |date| %>
     <%= "#{date.month}/#{date.day}" %>
-    <% if diary = @diaries.detect{ |d| d.date == date } %>
+    <% if diary = @diaries.detect{ |d| d.persisted? and d.date == date } %>
     <a href="<%= diary_path(diary) %>">
       <i class="material-icons">note</i>
     </a>
