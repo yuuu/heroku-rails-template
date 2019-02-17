@@ -82,6 +82,16 @@ h2 {
   @extend .white-text;
 }
 
+.field_with_errors {
+  label {
+    @extend .red-text;
+  }
+  input.datepicker, textarea {
+    @extend .red-text;
+    border-color: red;
+  }
+}
+
 #diary_body {
   height: 20ex;
 }

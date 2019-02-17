@@ -32,8 +32,20 @@
       </nav>
       <div class="container">
         <div class="row">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+          <% if notice %>
+          <div id="card-alert" class="card green lighten-5">
+            <div class="card-content green-text">
+              <p class="notice"><%= notice %></p>
+            </div>
+          </div>
+          <% end %>
+          <% if alert %>
+          <div id="card-alert" class="card red lighten-5">
+            <div class="card-content red-text">
+              <p class="alert"><%= alert %></p>
+            </div>
+          </div>
+          <% end %>
         </div>
         <%= yield %>
       </div>

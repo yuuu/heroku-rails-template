@@ -1,24 +1,13 @@
 <div class="row">
   <div class="col l8 s12">
     <%= form_with(model: diary, local: true) do |form| %>
-      <% if diary.errors.any? %>
-        <div id="error_explanation" class="row">
-          <div class="col l12">
-            <h2><%= pluralize(diary.errors.count, "error") %> prohibited this diary from being saved:</h2>
-
-            <ul>
-            <% diary.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-            </ul>
-          </div>
-        </div>
-      <% end %>
-
       <div class="field row">
         <div class="col l12">
           <%= form.label :date %>
           <%= form.text_field :date, class: :datepicker %>
+          <% if diary.errors[:date].any? %>
+          <small class="red-text"><%= "Date #{diary.errors[:date].first}" %></small>
+          <% end %>
         </div>
       </div>
 
@@ -26,6 +15,9 @@
         <div class="col l12">
           <%= form.label :body %>
           <%= form.text_area :body, class: 'materialize-textarea', rows: 10 %>
+          <% if diary.errors[:body].any? %>
+          <small class="red-text"><%= "Body #{diary.errors[:date].first}" %></small>
+          <% end %>
         </div>
       </div>
 
