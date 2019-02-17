@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      diary: 日記
+    attributes:
+      diary:
+        date: 日付
+        body: 本文

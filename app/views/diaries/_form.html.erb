@@ -16,7 +16,7 @@
           <%= form.label :body %>
           <%= form.text_area :body, class: 'materialize-textarea', rows: 10 %>
           <% if diary.errors[:body].any? %>
-          <small class="red-text"><%= "Body #{diary.errors[:date].first}" %></small>
+          <small class="red-text"><%= "Body #{diary.errors[:body].first}" %></small>
           <% end %>
         </div>
       </div>

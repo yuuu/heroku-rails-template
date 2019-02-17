@@ -27,11 +27,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'devise', '~> 4.5'
-
+gem 'devise', '~> 4.6'
 gem 'simple_calendar', '~> 2.3.0'
-
 gem 'kaminari', '~> 1.1.1'
+gem "rails-i18n", '~>5.1'
+gem "devise-i18n", '~>1.8'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -47,6 +47,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'i18n-tasks', '~> 0.9.28'
 end
 
 group :development do

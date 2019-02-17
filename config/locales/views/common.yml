@@ -1,0 +1,13 @@
+ja:
+  views:
+    buttons:
+      show: 詳細
+      edit: 編集
+      destroy: 削除
+      back: 戻る
+    pagination:
+      first: "最初"
+      last: "最後"
+      previous: "前"
+      next: "次"
+      truncate: "..."
