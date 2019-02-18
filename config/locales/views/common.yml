@@ -1,13 +1,16 @@
 ja:
-  views:
-    buttons:
-      show: 詳細
-      edit: 編集
-      destroy: 削除
-      back: 戻る
-    pagination:
-      first: "最初"
-      last: "最後"
-      previous: "前"
-      next: "次"
-      truncate: "..."
+  buttons:
+    show: 詳細
+    edit: 編集
+    destroy: 削除
+    back: 戻る
+  pagination:
+    first: "最初"
+    last: "最後"
+    previous: "前"
+    next: "次"
+    truncate: "..."
+  session:
+    sign_in: サインイン
+    sign_up: サインアップ
+    sign_out: サインアウト

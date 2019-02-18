@@ -2,8 +2,8 @@
   <td><%= diary.date %></td>
   <td><%= simple_format diary.body %></td>
   <td>
-    <%= link_to t('views.buttons.show'), diary, class: 'show-btn' %>
-    <%= link_to t('views.buttons.edit'), edit_diary_path(diary), class: 'edit-btn' %>
-    <%= link_to t('views.buttons.destroy'), diary, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-btn' %>
+    <%= link_to t('buttons.show'), diary, class: 'show-btn' %>
+    <%= link_to t('buttons.edit'), edit_diary_path(diary), class: 'edit-btn' %>
+    <%= link_to t('buttons.destroy'), diary, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-btn' %>
   </td>
 </tr>
