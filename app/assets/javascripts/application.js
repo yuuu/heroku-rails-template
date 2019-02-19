@@ -26,6 +26,11 @@ document.addEventListener('turbolinks:load', function() {
   var instances = M.Datepicker.init(elems, {});
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, {});
+});
+
 document.addEventListener('turbolinks:load', function() {
   if (!window.appName) window.appName = {};
   window.appName.formDirty = false;

@@ -16,6 +16,7 @@
       <nav role="navigation">
         <div class="nav-wrapper container">
           <a href="<%= root_path %>" class="brand-logo"><i class="material-icons">note_add</i>C2Diary</a>
+          <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <% if current_user %>
             <li>
@@ -38,6 +39,26 @@
           </ul>
         </div>
       </nav>
+      <ul class="sidenav" id="mobile-menu">
+        <% if current_user %>
+        <li>
+          <a ref="nofollow" data-method="delete" href="<%= destroy_user_session_path %>">
+            <i class="material-icons white-text">system_update_alt</i><%= t('session.sign_out') %>
+          </a>
+        </li>
+        <% else %>
+        <li>
+          <a href="<%= new_user_registration_path %>">
+            <i class="material-icons white-text">person_add</i><%= t('session.sign_up') %>
+          </a>
+        </li>
+        <li>
+          <a href="<%= new_user_session_path %>">
+            <i class="material-icons white-text">person</i><%= t('session.sign_in') %>
+          </a>
+        </li>
+        <% end %>
+      </ul>
       <div class="container">
         <div class="row">
           <% if notice %>
