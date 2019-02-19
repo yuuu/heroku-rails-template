@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: heroku-rails-template_production
-  username: heroku-rails-template
-  password: <%= ENV['HEROKU-RAILS-TEMPLATE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
