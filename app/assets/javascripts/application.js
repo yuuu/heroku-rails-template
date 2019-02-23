@@ -36,34 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  if (!window.appName) window.appName = {};
-  window.appName.formDirty = false;
-  window.appName.formSubmit = false;
-  window.appName.dirtyMessage = '保存していない内容が失われますが、よろしいですか';
-
-  document.querySelectorAll('input, select, textarea').forEach(function(el) {
-    el.addEventListener('change', function () {
-      if (!window.appName.formDirty) window.appName.formDirty = true;
-    });
-  });
-
-  document.querySelectorAll('form').forEach(function(el) {
-    el.addEventListener('submit', function () {
-      window.appName.formSubmit = true;
-    });
-  });
-});
-
-document.addEventListener("turbolinks:before-visit", function () {
-  if (window.appName.formDirty) {
-    return window.confirm(window.appName.dirtyMessage);
-  }
-})
-
-document.addEventListener("beforeunload", function (event) {
-  console.log('aaaa');
-  if (!window.appName.formSubmit && window.appName.formDirty) {
-    event.returnValue = window.appName.dirtyMessage;
-    return event.returnValue;
-  }
+  var elems = document.querySelectorAll('.materialboxed');
+  var instances = M.Materialbox.init(elems, {});
 });
