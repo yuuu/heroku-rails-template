@@ -1,11 +1,5 @@
 <div class="row">
   <div class="col l12 s12">
-    <%= render 'calendar', diaries: @calendar_diaries %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col l12 s12">
     <%= form_with(model: diary, local: true) do |form| %>
     <div class="field row">
       <div class="col l12">

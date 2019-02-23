@@ -1,10 +1,8 @@
 <h1><%= t('.title') %></h1>
 
-<div class="row">
-  <div class="col l12 s12">
-    <%= render 'calendar', diaries: @calendar_diaries %>
-  </div>
-</div>
+<%= render 'calendar', diaries: @calendar_diaries %>
+
+<h2><%= t('.recent') %></h2>
 
 <div class="row">
   <div class="col l12 s12">

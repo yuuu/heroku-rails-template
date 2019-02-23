@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
@@ -102,5 +102,16 @@
         </div>
       </footer>
     </div>
+    <script>
+    <% if %w[new edit].include?(action_name) %>
+    var onBeforeunloadHandler = function(e) {
+      e.returnValue = '保存していない内容が失われますが、よろしいですか';
+    };
+    window.addEventListener('beforeunload', onBeforeunloadHandler, false);
+    document.querySelectorAll('form').forEach(function(el) {
+      el.addEventListener('submit', function () { window.removeEventListener('beforeunload', onBeforeunloadHandler, false); });
+    });
+    <% end %>
+    </script>
   </body>
 </html>

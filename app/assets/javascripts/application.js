@@ -13,15 +13,14 @@
 //= require rails-ujs
 //= require activestorage
 //= require materialize
-//= require turbolinks
 //= require_tree .
 
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems, {});
 });
 
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.datepicker');
   var instances = M.Datepicker.init(elems, {});
 });
@@ -31,7 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Sidenav.init(elems, {});
 });
 
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, {});
+});
+
+document.addEventListener('DOMContentLoaded', function() {
   if (!window.appName) window.appName = {};
   window.appName.formDirty = false;
   window.appName.formSubmit = false;
@@ -63,4 +67,3 @@ document.addEventListener("beforeunload", function (event) {
     return event.returnValue;
   }
 });
-

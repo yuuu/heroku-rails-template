@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :diaries
+  resources :diaries, except: [:show]
   root to: 'pages#home'
   get 'pages/about'
   get 'pages/help'

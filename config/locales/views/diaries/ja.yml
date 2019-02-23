@@ -2,9 +2,12 @@ ja:
   diaries:
     index:
       title: 日記一覧
+      recent: 最近の日記
     show:
       title: "%{date}の日記"
     new:
       title: 日記新規登録
     edit:
       title: 日記編集
+    calendar:
+      title: カレンダー

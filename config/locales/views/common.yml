@@ -16,3 +16,5 @@ ja:
     sign_in: サインイン
     sign_up: サインアップ
     sign_out: サインアウト
+  message:
+    delete_sure: '削除してもよろしいでしょうか？'

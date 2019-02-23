@@ -1,7 +1,11 @@
+<h2><%= t('.title') %></h2>
+
+<div class="row">
+  <div class="col l12 s12">
   <%= month_calendar do |date| %>
     <%= "#{date.month}/#{date.day}" %>
     <% if diary = diaries.detect{ |d| d.persisted? and d.date == date } %>
-    <a href="<%= diary_path(diary) %>">
+    <a href="#diary_show_<%= diary.id %>" class="modal-trigger">
       <i class="material-icons">note</i>
     </a>
     <% else %>
@@ -10,3 +14,23 @@
     </a>
     <% end %>
   <% end %>
+  </div>
+</div>
+
+<% diaries.each do |diary| %>
+<div id="diary_show_<%= diary.id %>" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h3><%= t('diaries.show.title', date: diary.date ) %></h4>
+    <div class="row">
+      <div class="col l12 s12">
+        <%= simple_format(diary.body) %>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= link_to t('buttons.edit'), edit_diary_path(diary), class: 'edit-btn' %>
+    <%= link_to t('buttons.destroy'), diary, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-btn' %>
+    <%= link_to t('buttons.back'), '#!', class: 'back-btn modal-close' %>
+  </div>
+</div>
+<% end %>
