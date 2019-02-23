@@ -1,7 +1,13 @@
 <h1><%= t('.title') %></h1>
 
 <div class="row">
-  <div class="col l8 s12">
+  <div class="col l12 s12">
+    <%= render 'calendar', diaries: @calendar_diaries %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col l12 s12">
     <table>
       <thead>
         <tr>
@@ -17,8 +23,5 @@
       </tbody>
     </table>
     <%= paginate @diaries %>
-  </div>
-  <div class="col l4 s12">
-    <%= render 'calendar' %>
   </div>
 </div>

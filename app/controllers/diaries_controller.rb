@@ -43,7 +43,7 @@ class DiariesController < ApplicationController
     def set_calendar_diaries
       date = params[:start_date] ? Date.parse(params[:start_date]) : Date.today.beginning_of_month
       @calendar_diaries = current_user.diaries
-                                      .where(date: (date - 1.week)..(date + 1.week))
+                                      .where(date: (date - 1.month)..(date + 1.month))
                                       .order(date: :desc)
     end
 

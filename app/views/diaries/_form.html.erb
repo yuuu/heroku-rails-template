@@ -1,34 +1,37 @@
 <div class="row">
-  <div class="col l8 s12">
-    <%= form_with(model: diary, local: true) do |form| %>
-      <div class="field row">
-        <div class="col l12">
-          <%= form.label :date %>
-          <%= form.text_field :date, class: :datepicker %>
-          <% if diary.errors[:date].any? %>
-          <small class="red-text"><%= "Date #{diary.errors[:date].first}" %></small>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="field row">
-        <div class="col l12">
-          <%= form.label :body %>
-          <%= form.text_area :body, class: 'materialize-textarea', rows: 10 %>
-          <% if diary.errors[:body].any? %>
-          <small class="red-text"><%= "Body #{diary.errors[:body].first}" %></small>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="actions row">
-        <div class="col l12">
-          <%= form.submit class: 'action-btn' %>
-        </div>
-      </div>
-    <% end %>
+  <div class="col l12 s12">
+    <%= render 'calendar', diaries: @calendar_diaries %>
   </div>
-  <div class="col l4 s12">
-    <%= render 'calendar' %>
+</div>
+
+<div class="row">
+  <div class="col l12 s12">
+    <%= form_with(model: diary, local: true) do |form| %>
+    <div class="field row">
+      <div class="col l12">
+        <%= form.label :date %>
+        <%= form.text_field :date, class: :datepicker %>
+        <% if diary.errors[:date].any? %>
+        <small class="red-text"><%= "Date #{diary.errors[:date].first}" %></small>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="col l12">
+        <%= form.label :body %>
+        <%= form.text_area :body, class: 'materialize-textarea', rows: 10 %>
+        <% if diary.errors[:body].any? %>
+        <small class="red-text"><%= "Body #{diary.errors[:body].first}" %></small>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="actions row">
+      <div class="col l12">
+        <%= form.submit class: 'action-btn' %>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>

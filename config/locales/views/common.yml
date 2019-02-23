@@ -1,4 +1,6 @@
 ja:
+  service:
+    name: C2Diary
   buttons:
     show: 詳細
     edit: 編集
