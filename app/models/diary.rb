@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Diary < ApplicationRecord
   attr_accessor :body
   paginates_per 3
@@ -7,12 +9,12 @@ class Diary < ApplicationRecord
 
   before_save do
     crypt = ActiveSupport::MessageEncryptor.new(key)
-    self.encrypted_body = crypt.encrypt_and_sign(self.body)
+    self.encrypted_body = crypt.encrypt_and_sign(body)
   end
 
   after_find do
     crypt = ActiveSupport::MessageEncryptor.new(key)
-    self.body = crypt.decrypt_and_verify(self.encrypted_body)
+    self.body = crypt.decrypt_and_verify(encrypted_body)
   end
 
   private

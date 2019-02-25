@@ -1,47 +1,49 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class DiariesTest < ApplicationSystemTestCase
   setup do
     @diary = diaries(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit diaries_url
-    assert_selector "h1", text: "Diaries"
+    assert_selector 'h1', text: 'Diaries'
   end
 
-  test "creating a Diary" do
+  test 'creating a Diary' do
     visit diaries_url
-    click_on "New Diary"
+    click_on 'New Diary'
 
-    fill_in "Date", with: @diary.date
-    fill_in "Encrypted body", with: @diary.encrypted_body
-    fill_in "User", with: @diary.user_id
-    click_on "Create Diary"
+    fill_in 'Date', with: @diary.date
+    fill_in 'Encrypted body', with: @diary.encrypted_body
+    fill_in 'User', with: @diary.user_id
+    click_on 'Create Diary'
 
-    assert_text "Diary was successfully created"
-    click_on "Back"
+    assert_text 'Diary was successfully created'
+    click_on 'Back'
   end
 
-  test "updating a Diary" do
+  test 'updating a Diary' do
     visit diaries_url
-    click_on "Edit", match: :first
+    click_on 'Edit', match: :first
 
-    fill_in "Date", with: @diary.date
-    fill_in "Encrypted body", with: @diary.encrypted_body
-    fill_in "User", with: @diary.user_id
-    click_on "Update Diary"
+    fill_in 'Date', with: @diary.date
+    fill_in 'Encrypted body', with: @diary.encrypted_body
+    fill_in 'User', with: @diary.user_id
+    click_on 'Update Diary'
 
-    assert_text "Diary was successfully updated"
-    click_on "Back"
+    assert_text 'Diary was successfully updated'
+    click_on 'Back'
   end
 
-  test "destroying a Diary" do
+  test 'destroying a Diary' do
     visit diaries_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on 'Destroy', match: :first
     end
 
-    assert_text "Diary was successfully destroyed"
+    assert_text 'Diary was successfully destroyed'
   end
 end

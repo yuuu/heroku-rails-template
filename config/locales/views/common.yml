@@ -16,5 +16,8 @@ ja:
     sign_in: サインイン
     sign_up: サインアップ
     sign_out: サインアウト
-  message:
+  messages:
+    created: "%{model}を作成しました"
+    updated: "%{model}を更新しました"
+    destroyed: "%{model}を削除しました"
     delete_sure: '削除してもよろしいでしょうか？'
