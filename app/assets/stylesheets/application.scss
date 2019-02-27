@@ -94,6 +94,21 @@ h2 {
   }
 }
 
+.create_button {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  padding: 0;
+  line-height: 74px;
+  @extend .btn-floating;
+  @extend .btn-large;
+  @extend .waves-effect;
+  @extend .waves-light;
+  @extend .red;
+}
+
 #diary_body {
   height: 20ex;
 }
