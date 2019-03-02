@@ -21,3 +21,7 @@ ja:
     updated: "%{model}を更新しました"
     destroyed: "%{model}を削除しました"
     delete_sure: '削除してもよろしいでしょうか？'
+  menu:
+    user_menu: ユーザメニュー
+    csv_import: CSVインポート
+    csv_export: CSVエクスポート
