@@ -60,6 +60,6 @@ class DiariesController < ApplicationController
   end
 
   def diary_params
-    params.require(:diary).permit(:body, :date, :user_id)
+    params.require(:diary).permit(:body, :date)
   end
 end

@@ -6,6 +6,7 @@ ja:
     edit: 編集
     destroy: 削除
     back: 戻る
+    file_select: ファイル選択
   pagination:
     first: "最初"
     last: "最後"
@@ -23,5 +24,6 @@ ja:
     delete_sure: '削除してもよろしいでしょうか？'
   menu:
     user_menu: ユーザメニュー
+    diaries: 日記
     csv_import: CSVインポート
     csv_export: CSVエクスポート

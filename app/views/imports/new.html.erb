@@ -1,0 +1,22 @@
+<h1><%= t('.title') %></h1>
+<div class="container">   
+  <%= form_with(model: @import, local: true, multipart: true) do |form| %>
+  <div class="field row">
+    <div class="col l12">
+      <div class="file-field input-field">
+        <div class="btn">
+          <span><%= t('buttons.file_select') %></span><%= form.file_field :file %>
+        </div>
+        <% if @import.errors[:file].any? %>
+        <small class="red-text"><%= "File #{@import.errors[:file].first}" %></small>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="actions row">
+    <div class="col l12">
+      <%= form.submit class: 'action-btn' %>
+    </div>
+  </div>
+  <% end %>
+</div>

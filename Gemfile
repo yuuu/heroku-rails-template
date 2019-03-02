@@ -34,6 +34,8 @@ gem 'devise-i18n', '~>1.8'
 gem 'kaminari', '~> 1.1.1'
 gem 'rails-i18n', '~>5.1'
 gem 'simple_calendar', '~> 2.3.0'
+gem 'activerecord-import', '~> 1.0.1'
+gem 'csv'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

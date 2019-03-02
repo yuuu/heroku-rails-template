@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      import: CSVインポート
+    attributes:
+      import:
+        file: ファイル

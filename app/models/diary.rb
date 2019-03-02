@@ -7,6 +7,9 @@ class Diary < ApplicationRecord
   validates :date, presence: true, uniqueness: true
   validates :body, presence: true
 
+  belongs_to :import, optional: true
+  belongs_to :user
+
   before_save do
     crypt = ActiveSupport::MessageEncryptor.new(key)
     self.encrypted_body = crypt.encrypt_and_sign(body)
