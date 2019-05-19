@@ -4,7 +4,7 @@ class Diary < ApplicationRecord
   attr_accessor :body
   paginates_per 3
 
-  validates :date, presence: true, uniqueness: true
+  validates :date, presence: true, uniqueness: {scope: :user_id}
   validates :body, presence: true
 
   belongs_to :import, optional: true
