@@ -1,6 +1,6 @@
 <tr>
   <td><%= diary.date %></td>
-  <td><%= simple_format diary.body %></td>
+  <td><%= simple_format diary.body, class: 'diary-body' %></td>
   <td>
     <%= link_to t('buttons.edit'), edit_diary_path(diary), class: 'edit-btn' %>
     <%= link_to t('buttons.destroy'), diary, method: :delete, data: { confirm: t('messages.delete_sure') }, class: 'destroy-btn' %>

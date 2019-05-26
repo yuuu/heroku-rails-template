@@ -109,12 +109,18 @@ h2 {
   @extend .red;
 }
 
-#diary_body {
-  height: 20ex;
+.diary-body {
+  width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 
 .nav-wrapper {
-  a {
+  .brand-logo{
+    font-size: 1.5rem;
     .logo {
       display: inline;
       vertical-align: middle;
