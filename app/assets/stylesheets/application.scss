@@ -17,7 +17,7 @@
  */
 @import "materialize/components/color-variables";
 $primary-color: color("amber", "lighten-1") !default;
-$secondary-color: color("light-blue", "darken-4") !default;
+$secondary-color: #114B5F !default;
 @import "materialize";
 
 nav {
@@ -115,9 +115,10 @@ h2 {
 
 .nav-wrapper {
   a {
-    i {
-      font-size: 32px;
-      float: left;
+    .logo {
+      display: inline;
+      vertical-align: middle;
+      margin-right: 0.3em;
     }
   }
 }

@@ -23,7 +23,7 @@
       </ul>
       <nav role="navigation">
         <div class="nav-wrapper container">
-          <a href="<%= root_path %>" class="brand-logo"><i class="material-icons">note_add</i>C2Diary</a>
+          <a href="<%= root_path %>" class="brand-logo"><%= image_tag 'logo.png', class: 'logo', width: 48, height: 48 %>C2Diary</a>
           <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <% if current_user %>

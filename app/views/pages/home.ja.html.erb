@@ -1,14 +1,14 @@
-<h1 class="header center">誰にも見られない日記帳を作ろう</h1>
+<h1 class="header center">日記帳を作ろう</h1>
 <div class="row center">
-  <h5 class="header col s12 light">C2Diaryはあなたにしか閲覧できない日記帳をWeb上に作るためのサービスです</h5>
+  <%= image_tag 'logo.png', width: 300, heithg: 300 %>
+</div>
+<div class="row center">
+  <h5 class="header col s12 light">C2Diaryはあなたの日記帳をWeb上に作るためのサービスです</h5>
 </div>
 <div class="row center">
   <a href="<%= new_user_registration_path %>" class="btn-large waves-effect waves-light white-text">
     <%= t('session.sign_up') %>
   </a>
-</div>
-<div class="row center">
-  <%= image_tag("note.jpg", class: 'materialboxed responsive-img', style: 'display:inline;', alt: '日記') %>
 </div>
 <!--   Icon Section   -->
 <div class="row">
