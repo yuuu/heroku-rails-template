@@ -1,8 +1,12 @@
-<tr>
-  <td><%= diary.date %></td>
-  <td><%= simple_format diary.body, class: 'diary-body' %></td>
-  <td>
-    <%= link_to t('buttons.edit'), edit_diary_path(diary), class: 'edit-btn' %>
-    <%= link_to t('buttons.destroy'), diary, method: :delete, data: { confirm: t('messages.delete_sure') }, class: 'destroy-btn' %>
-  </td>
-</tr>
+<div class="col s12 m6">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title"><%= l(diary.date) %> <%= t('.diary_in') %></span>
+      <%= simple_format diary.body, class: 'diary-body' %>
+    </div>
+    <div class="card-action">
+      <%= link_to t('buttons.edit'), edit_diary_path(diary), class: 'edit-btn' %>
+      <%= link_to t('buttons.destroy'), diary, method: :delete, data: { confirm: t('messages.delete_sure') }, class: 'destroy-btn' %>
+    </div>
+  </div>
+</div>

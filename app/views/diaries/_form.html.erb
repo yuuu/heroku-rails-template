@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="col l12 s12">
+  <div class="col s12">
     <%= form_with(model: diary, local: true) do |form| %>
     <div class="field row">
-      <div class="col l12">
+      <div class="col s12">
         <%= form.label :date %>
         <%= form.text_field :date, class: :datepicker %>
         <% if diary.errors[:date].any? %>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="field row">
-      <div class="col l12">
+      <div class="col s12">
         <%= form.label :body %>
         <%= form.text_area :body, class: 'materialize-textarea', rows: 10 %>
         <% if diary.errors[:body].any? %>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="actions row">
-      <div class="col l12">
+      <div class="col s12">
         <%= form.submit class: 'action-btn' %>
       </div>
     </div>

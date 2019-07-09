@@ -2,7 +2,7 @@
 
 class Diary < ApplicationRecord
   attr_accessor :body
-  paginates_per 3
+  paginates_per 8
 
   validates :date, presence: true, uniqueness: {scope: :user_id}
   validates :body, presence: true

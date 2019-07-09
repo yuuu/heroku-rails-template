@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -15,11 +16,11 @@
   <body>
     <div class="section no-pad-bot no-pad-top" id="main">
       <ul id="user-dropdown" class="dropdown-content">
-        <li><a href="<%= diaries_path %>"><%= t('menu.diaries') %></a></li>
-        <li><a href="<%= new_import_path %>"><%= t('menu.csv_import') %></a></li>
-        <li><a href=""><%= t('menu.csv_export') %></a></li>
+        <li><a href="<%= diaries_path %>"><i class="material-icons">book</i><%= t('menu.diaries') %></a></li>
+        <li><a href="<%= new_import_path %>"><i class="material-icons">arrow_upward</i><%= t('menu.csv_import') %></a></li>
+        <li><a href=""><i class="material-icons">arrow_downward</i><%= t('menu.csv_export') %></a></li>
         <li class="divider"></li>
-        <li><a ref="nofollow" data-method="delete" href="<%= destroy_user_session_path %>"><%= t('session.sign_out') %></a></li>
+        <li><a ref="nofollow" data-method="delete" href="<%= destroy_user_session_path %>"><i class="material-icons">exit_to_app</i><%= t('session.sign_out') %></a></li>
       </ul>
       <nav role="navigation">
         <div class="nav-wrapper container">
@@ -41,14 +42,14 @@
       </nav>
       <ul class="sidenav" id="mobile-menu">
         <% if current_user %>
-        <li><a href="<%= diaries_path %>"><%= t('menu.diaries') %></a></li>
-        <li><a href="<%= new_import_path %>"><%= t('menu.csv_import') %></a></li>
-        <li><a href=""><%= t('menu.csv_export') %></a></li>
+        <li><a href="<%= diaries_path %>"><i class="material-icons">book</i><%= t('menu.diaries') %></a></li>
+        <li><a href="<%= new_import_path %>"><i class="material-icons">arrow_upward</i><%= t('menu.csv_import') %></a></li>
+        <li><a href=""><i class="material-icons">arrow_downward</i><%= t('menu.csv_export') %></a></li>
         <li class="divider"></li>
-        <li><a ref="nofollow" data-method="delete" href="<%= destroy_user_session_path %>"><%= t('session.sign_out') %></a></li>
+        <li><a ref="nofollow" data-method="delete" href="<%= destroy_user_session_path %>"><i class="material-icons">exit_to_app</i><%= t('session.sign_out') %></a></li>
         <% else %>
-        <li><a href="<%= new_user_registration_path %>"><%= t('session.sign_up') %></a></li>
-        <li><a href="<%= new_user_session_path %>"><%= t('session.sign_in') %></a></li>
+        <li><a href="<%= new_user_registration_path %>"><i class="material-icons">person_add</i><%= t('session.sign_up') %></a></li>
+        <li><a href="<%= new_user_session_path %>"><i class="material-icons">input</i><%= t('session.sign_in') %></a></li>
         <% end %>
       </ul>
       <div class="container">

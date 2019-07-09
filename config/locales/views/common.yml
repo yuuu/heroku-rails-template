@@ -24,6 +24,9 @@ ja:
     delete_sure: '削除してもよろしいでしょうか？'
   menu:
     user_menu: ユーザメニュー
-    diaries: 日記
+    diaries: 日記一覧
     csv_import: CSVインポート
     csv_export: CSVエクスポート
+  simple_calendar:
+    next: 次の月
+    previous: 前の月
