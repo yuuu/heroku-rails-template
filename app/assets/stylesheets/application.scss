@@ -117,6 +117,7 @@ h2 {
 }
 
 .diary-body {
+  margin: 1ex auto;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -139,10 +140,6 @@ footer {
   width: 100%;
   background-color: $primary-color;
   margin-top: auto;
-}
-
-.row .col .card .card-content p {
-  height: 10em;
 }
 
 #user-dropdown li a {
