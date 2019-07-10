@@ -145,3 +145,14 @@ footer {
 #user-dropdown li a {
   font-size: 0.8rem;
 }
+
+.card {
+  .card-content {
+    height: 200px;
+    p {
+      margin: 1ex auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
