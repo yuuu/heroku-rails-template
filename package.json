@@ -1,5 +1,7 @@
 {
   "name": "heroku-rails-template",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "lint": "^0.7.0"
+  }
 }

@@ -15,20 +15,20 @@
 //= require materialize
 //= require_tree .
 
-let ajaxTimer = null;
-let dateEl = null;
-let bodyEl = null;
+var ajaxTimer = null;
+var dateEl = null;
+var bodyEl = null;
 
-const postDiary = () => {
-  const xhr = new XMLHttpRequest();
+var postDiary = () => {
+  var xhr = new XMLHttpRequest();
   xhr.open("POST", "/diaries/auto_save", true);
   xhr.setRequestHeader("Content-Type", "application/json");
 
-  const token = document.querySelector('meta[name="csrf-token"]')
+  var token = document.querySelector('meta[name="csrf-token"]')
                         .getAttribute('content');
   xhr.setRequestHeader('X-CSRF-TOKEN', token);
 
-  const json = JSON.stringify({
+  var json = JSON.stringify({
     "diary": {
       "date": dateEl.value,
       "body": bodyEl.value
@@ -37,7 +37,7 @@ const postDiary = () => {
   xhr.send(json);
 }
 
-const autoSaveDiary = () => {
+var autoSaveDiary = () => {
   clearTimeout(ajaxTimer);
   ajaxTimer = setTimeout(postDiary, 500);
 }
