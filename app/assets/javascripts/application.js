@@ -19,7 +19,7 @@ var ajaxTimer = null;
 var dateEl = null;
 var bodyEl = null;
 
-var postDiary = () => {
+function postDiary() {
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "/diaries/auto_save", true);
   xhr.setRequestHeader("Content-Type", "application/json");
@@ -37,7 +37,7 @@ var postDiary = () => {
   xhr.send(json);
 }
 
-var autoSaveDiary = () => {
+function autoSaveDiary() {
   clearTimeout(ajaxTimer);
   ajaxTimer = setTimeout(postDiary, 500);
 }
