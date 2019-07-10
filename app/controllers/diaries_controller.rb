@@ -15,7 +15,8 @@ class DiariesController < ApplicationController
   def edit; end
 
   def create
-    @diary = current_user.diaries.build(diary_params)
+    @diary = current_user.diaries.find_by(date: diary_params[:date]) ||
+             current_user.diaries.build(diary_params)
     if @diary.save
       redirect_to diaries_path,
                   notice: I18n.t('messages.created', model: model_name)
