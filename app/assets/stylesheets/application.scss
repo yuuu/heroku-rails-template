@@ -149,6 +149,8 @@ footer {
 .card-diary {
   .card-content {
     height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     p {
       margin: 1ex auto;
       overflow: hidden;
