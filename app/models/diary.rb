@@ -20,6 +20,10 @@ class Diary < ApplicationRecord
     self.body = crypt.decrypt_and_verify(encrypted_body)
   end
 
+  scope :month, lambda {|date|
+    where(date: (date - 1.month)..(date + 1.month)).order(date: :desc)
+  }
+
   private
 
   def key

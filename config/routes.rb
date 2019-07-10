@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/help'
 
-  resources :diaries, except: [:show]
+  resources :diaries, except: [:show] do
+    collection do
+      post :auto_save
+    end
+  end
+
   resources :imports, only: [:new, :create]
 
   devise_for :users
