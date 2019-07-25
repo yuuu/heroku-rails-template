@@ -27,6 +27,7 @@ ja:
     diaries: 日記一覧
     csv_import: CSVインポート
     csv_export: CSVエクスポート
+    time_travel: タイムトラベル
   simple_calendar:
     next: 次の月
     previous: 前の月

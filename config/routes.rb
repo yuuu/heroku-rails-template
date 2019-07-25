@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :diaries, except: [:show] do
     collection do
       post :auto_save
+      get :time_travel
     end
   end
 

@@ -17,6 +17,7 @@
     <div class="section no-pad-bot no-pad-top" id="main">
       <ul id="user-dropdown" class="dropdown-content">
         <li><a href="<%= diaries_path %>"><i class="material-icons">book</i><%= t('menu.diaries') %></a></li>
+        <li><a href="<%= time_travel_diaries_path %>"><i class="material-icons">card_travel</i><%= t('menu.time_travel') %></a></li>
         <li><a href="<%= new_import_path %>"><i class="material-icons">arrow_upward</i><%= t('menu.csv_import') %></a></li>
         <li><a href=""><i class="material-icons">arrow_downward</i><%= t('menu.csv_export') %></a></li>
         <li class="divider"></li>
@@ -43,6 +44,7 @@
       <ul class="sidenav" id="mobile-menu">
         <% if current_user %>
         <li><a href="<%= diaries_path %>"><i class="material-icons">book</i><%= t('menu.diaries') %></a></li>
+        <li><a href="<%= time_travel_diaries_path %>"><i class="material-icons">card_travel</i><%= t('menu.time_travel') %></a></li>
         <li><a href="<%= new_import_path %>"><i class="material-icons">arrow_upward</i><%= t('menu.csv_import') %></a></li>
         <li><a href=""><i class="material-icons">arrow_downward</i><%= t('menu.csv_export') %></a></li>
         <li class="divider"></li>

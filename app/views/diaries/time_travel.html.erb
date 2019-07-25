@@ -1,0 +1,10 @@
+<h2><%= t('.title') %></h2>
+
+<div class="row">
+  <div class="col l12 s12">
+    <div class="row">
+      <%= render partial: 'diary', collection: @diaries %>
+    </div>
+    <%= paginate @diaries %>
+  </div>
+</div>

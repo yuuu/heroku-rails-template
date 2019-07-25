@@ -51,6 +51,13 @@ class DiariesController < ApplicationController
     end
   end
 
+  def time_travel
+    @diaries = current_user.diaries
+                           .where(date: (1..100).map { |y| y.years.ago })
+                           .order(date: :desc)
+                           .page(params[:page])
+  end
+
   private
 
   def set_diaries
