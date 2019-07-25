@@ -5,8 +5,24 @@
       <%= simple_format diary.body, class: 'diary-body' %>
     </div>
     <div class="card-action">
+      <%= link_to t('buttons.show'), "#diary_show_#{diary.id}", class: 'show-btn modal-trigger' %>
       <%= link_to t('buttons.edit'), edit_diary_path(diary), class: 'edit-btn' %>
       <%= link_to t('buttons.destroy'), diary, method: :delete, data: { confirm: t('messages.delete_sure') }, class: 'destroy-btn' %>
     </div>
+  </div>
+</div>
+<div id="diary_show_<%= diary.id %>" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h3><%= t('diaries.show.title', date: diary.date ) %></h4>
+    <div class="row">
+      <div class="col l12 s12">
+        <%= simple_format(diary.body) %>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= link_to t('buttons.edit'), edit_diary_path(diary), class: 'edit-btn' %>
+    <%= link_to t('buttons.destroy'), diary, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-btn' %>
+    <%= link_to t('buttons.back'), '#!', class: 'back-btn modal-close' %>
   </div>
 </div>
