@@ -50,8 +50,10 @@ h2 {
   }
 }
 
-.day {
-  font-size: 0.8rem;
+@media screen and (max-width: 480px) {
+  .day {
+    font-size: 0.7rem;
+  }
 }
 
 .action-btn {
