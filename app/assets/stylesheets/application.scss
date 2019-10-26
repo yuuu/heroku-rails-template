@@ -50,6 +50,10 @@ h2 {
   }
 }
 
+.day {
+  font-size: 0.9rem;
+}
+
 .action-btn {
   @extend .waves-effect;
   @extend .waves-light;
